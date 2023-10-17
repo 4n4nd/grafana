@@ -37,6 +37,9 @@ ARG BUILD_BRANCH=""
 ARG GO_BUILD_TAGS="oss"
 ARG WIRE_TAGS="oss"
 ARG BINGO="true"
+# Set environment variables for Go
+ENV CGO_ENABLED=0
+ENV GOARCH=arm64
 
 # Install build dependencies
 RUN if grep -i -q alpine /etc/issue; then \
